@@ -2,7 +2,7 @@
 #include <stdio.h>
 // #define DEBUGER_SWAP
 // #define DEBUGER_SHIFT
-#define DEBUGER_INSERT
+// #define DEBUGER_INSERT
 
 void swap(int* arr, int a, int b){//O(1)
 #ifdef DEBUGER_SWAP
@@ -54,7 +54,7 @@ void shift_element(int* arr, int i){//O(i)
     return;
 }
 
-void insertion_sort(int* arr , int len){
+void insertion_sort(int* arr , int len){//if in any interaction in the loop we will do shift_element- O(1+2+...+n)-> O(n^2)
     
     if (len==1) {return;}//array is orgenized
     
@@ -66,6 +66,7 @@ void insertion_sort(int* arr , int len){
         }
         printf("]\n");
     #endif
+
     for (size_t i = 1; i < len; i++){
         int j = 0;
         while ( (j < i) && ( *(arr+j) < *(arr+i) )){
@@ -73,7 +74,7 @@ void insertion_sort(int* arr , int len){
             j++;
         }
 
-        if ( *(arr+j) > *(arr+i) ){
+        if ( *(arr+j) >= *(arr+i) ){
 
             int shifts = i-j;
             shift_element(arr+j,shifts);
