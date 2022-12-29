@@ -45,21 +45,31 @@ int substring( char * str1, char * str2){
         printf("%c ",str1[0]);
     }   
     return 0;
-    
-#ifdef DEBUGER_SUBSTRING
-#endif
 }
 
+//s -> t
+int similar (char *s, char *t, int n){
+    for(int i=0;i<n;i++){
+        while (*s && *t && *s == *t) {
+        str1++;
+        str2++;
+        }
+        if(*t==0){
+            return 1;
+        }
+        s++;
 
-// int similar (char *s, char *t, int n)
+    }
+    return 0;
+}
 // void print_lines(char * str)
 // void print_similar_words(char * str)
 
 
 int main (){
 
-    char ch1[]="fwayabcdefagjafafaykde";
-    char ch2[]="fay";
+    char ch1[]="swsystems";
+    char ch2[]="ssysems";
     char str[LINE];
     int ans = ggetline(str);
     printf("the get line return: %s",str);
