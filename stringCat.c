@@ -3,16 +3,22 @@
 #include <string.h>
 
 // #define DEBUGER_SWAP
-//#define DEBUGER_SHIFT
+// #define DEBUGER_SHIFT
 // #define DEBUGER_SUBSTRING
+#define MAIN
 #define LINE 256
 
 int ggetline(char s[]){
     int index = 0 ;
     char input = '1';
-    while(input != '\n'){
+    while(index < LINE){
         scanf("%c", &input);
+        if (input == '\n')
+        {
+            return 0;
+        }
         s[index]=input;
+        index++;
     }
     return 0;
 }
@@ -65,8 +71,14 @@ int similar (char *s, char *t, int n){
 // void print_lines(char * str)
 // void print_similar_words(char * str)
 
+#ifdef MAIN
+    int main (){
 
-int main (){
+        // char ch1[]="fwayabcdefagjafafaykde";
+        // char ch2[]="fay";
+        char str[LINE];
+        ggetline(str);
+        printf("the get line return: \n%s",str);
 
     char ch1[]="swsystems";
     char ch2[]="ssysems";
@@ -77,5 +89,11 @@ int main (){
     int x=0;
     x=substring(ch1,ch2);
     printf("%d\n", x);
-    return 0;
-}
+    
+
+        // int x=0;
+        // x=substring(ch1,ch2);
+        // printf("%d\n", x);
+        return 0;
+    }
+#endif
