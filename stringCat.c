@@ -55,16 +55,15 @@ int substring( char * str1, char * str2){
 
 //s -> t
 int similar (char *s, char *t, int n){
-    for(int i=0;i<n;i++){
+    for(int i=0;i<=n;i++){
         while (*s && *t && *s == *t) {
-        str1++;
-        str2++;
+        s++;
+        t++;
         }
         if(*t==0){
             return 1;
         }
         s++;
-
     }
     return 0;
 }
@@ -76,18 +75,18 @@ int similar (char *s, char *t, int n){
 
         // char ch1[]="fwayabcdefagjafafaykde";
         // char ch2[]="fay";
-        char str[LINE];
-        ggetline(str);
-        printf("the get line return: \n%s",str);
+        // char str[LINE];
+        // ggetline(str);
+        // printf("the get line return: \n%s",str);
 
     char ch1[]="swsystems";
     char ch2[]="ssysems";
     char str[LINE];
-    int ans = ggetline(str);
-    printf("the get line return: %s",str);
+    //int ans = ggetline(str);
+    //printf("the get line return: %s",str);
 
     int x=0;
-    x=substring(ch1,ch2);
+    x=similar(ch1,ch2,4);
     printf("%d\n", x);
     
 
