@@ -8,12 +8,13 @@
 #define MAIN
 #define GETLINE
 #define LINE 256
+#define WORD 30
 
 int ggetline(char str[]){
     #ifdef GETLINE
     #endif
     int index = 0 ;
-    char input = '1';
+    char input = '1';//reset
 
     while(index < LINE){
         scanf("%c", &input);
@@ -27,10 +28,21 @@ int ggetline(char str[]){
     return strlen(str);
 }
 
-int getword(char w[]){
+int getword(char str[]){
 
-    return 0;
-}
+    int index = 0 ;
+    char input = '1';//reset
+
+    while(index < WORD){
+        scanf("%c", &input);
+        if (input == '\n' || input == '\t' || input == ' ' )
+        {
+            return strlen(str);
+        }
+        str[index]=input;
+        index++;
+    }
+    return strlen(str);}
 
 int strcmp1(char *str1, char *str2)
 {
