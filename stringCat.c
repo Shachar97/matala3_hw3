@@ -1,28 +1,49 @@
 #include <stdio.h>
-//#include "isort.h"
+#include "stringCat.h"
 #include <string.h>
 
 // #define DEBUGER_SWAP
 // #define DEBUGER_SHIFT
 // #define DEBUGER_SUBSTRING
 #define MAIN
+#define GETLINE
 #define LINE 256
+#define WORD 30
 
-int ggetline(char s[]){
+int ggetline(char str[]){
+    #ifdef GETLINE
+    #endif
     int index = 0 ;
-    char input = '1';
+    char input = '1';//reset
+
     while(index < LINE){
         scanf("%c", &input);
         if (input == '\n')
         {
-            return 0;
+            return strlen(str);
         }
-        s[index]=input;
+        str[index]=input;
         index++;
     }
-    return 0;
+    return strlen(str);
 }
-// int getword(char w[])
+
+int getword(char str[]){
+
+    int index = 0 ;
+    char input = '1';//reset
+
+    while(index < WORD){
+        scanf("%c", &input);
+        if (input == '\n' || input == '\t' || input == ' ' )
+        {
+            return strlen(str);
+        }
+        str[index]=input;
+        index++;
+    }
+    return strlen(str);}
+
 int strcmp1(char *str1, char *str2)
 {
     while (*str1 && *str2 && *str1 == *str2) {
@@ -79,8 +100,8 @@ int similar (char *s, char *t, int n){
         // ggetline(str);
         // printf("the get line return: \n%s",str);
 
-    char ch1[]="swsystems";
-    char ch2[]="ssysems";
+    // char ch1[]="swsystems";
+    // char ch2[]="ssysems";
     char str[LINE];
     //int ans = ggetline(str);
     //printf("the get line return: %s",str);
