@@ -5,29 +5,13 @@
 // #define DEBUGER_SWAP
 // #define DEBUGER_SHIFT
 // #define DEBUGER_SUBSTRING
-// int ggetline(char str[]);
-// int getword(char str[]);
-// int substring( char * str1, char * str2);
-// int similar (char *s, char *t, int n);
-// void print_lines(char * str);
-// void print_similar_words(char * str);
+
 #define MAIN
 #define GETLINE
 #define LINE 256
 #define WORD 30
 
-// int main(){
-//     char word[WORD];
-//     char select;
-//     getword(word);
-//     scanf("%s",&select);
-//     if(select=='a'){
-//         print_lines(word);
-//     }else if(select=='b'){
-//         print_similar_words(word);
-//     }
-//     return 0;
-// }
+
 int main() {
     char word[WORD];
     char select;
@@ -36,12 +20,12 @@ int main() {
     scanf(" %c\n", &select);
     //printf("%s\n",word);
 
-    if (select == 'a')
+    if (select == 'a'){
         print_lines(word);
-
-    else if (select == 'b')
+    }
+    else if (select == 'b'){
         print_similar_words(word);
-
+    }
     return 0;
 }
 
