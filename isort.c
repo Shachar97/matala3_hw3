@@ -3,6 +3,24 @@
 // #define DEBUGER_SWAP
 // #define DEBUGER_SHIFT
 // #define DEBUGER_INSERT
+#define LEN 50
+//MAIN:
+int main(){
+    int my_arr[LEN];
+    int input;
+    int index=0;
+    while(index<LEN){
+        scanf("%d[ \t]",&input);
+        *(my_arr+index)=input;
+        index++;
+    }
+    insertion_sort(my_arr, LEN);
+    for (size_t i = 0; i < LEN-1; i++){
+        printf("%d,",*(my_arr+i));
+    }
+    printf("%d\n\n",*(my_arr + (LEN-1)));
+    return 0;
+}
 
 void swap(int* arr, int a, int b){//O(1)
 #ifdef DEBUGER_SWAP
