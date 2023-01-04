@@ -28,7 +28,13 @@ int main() {
     }
     return 0;
 }
-
+/*The function receives a string (character by character) from the input standard and saves it in the string s. The function will return
+the amount of characters actually received.
+ The line size is fixed in the program 256 LINE define#
+ A line will always end with the character 'n\'
+ in scanf If a reading error happens or the end-of-file is reached while reading, the proper indicator is set (feof or ferror)
+ . And, if either happens before any data could be successfully read, EOF is returned(https://cplusplus.com/reference/cstdio/scanf/?kw=scanf).
+*/
 int ggetline(char str[]){
     #ifdef GETLINE
     #endif
@@ -58,7 +64,10 @@ int ggetline(char str[]){
     }
     return strlen(str);
 }
-
+/*The function receives a string (character by character) from the standard input and saves it in the string w. The function
+will return the amount of characters actually received.
+ The size of the word is fixed in the program 30 WORD define#
+ A word will always end with one of the characters '', '\t', '\n'*/
    
     int getword(char str[]){
 
@@ -85,7 +94,9 @@ int ggetline(char str[]){
     }
     return strlen(str);
     }
-
+/*The function receives two strings str1 and str2 and checks whether str2 is contained in str1). ) substring
+The function will return 1 if yes and 0 if not
+strcmp is a utility function that checks whether the string is exactly equal*/
 int strcmp1(char *str1, char *str2)
 {
     while (*str1 && *str2 && *str1 == *str2) {
@@ -115,7 +126,9 @@ int substring( char * str1, char * str2){
     }   
     return 0;
 }
-
+/*The function will receive two strings t s and a number n. The function will check if it is possible to get from the string S to the string t
+By omitting n characters.
+For identical strings and the number 0 the program will return 1 only if the two strings are identical.*/
 //s -> t
 int similar (char *s, char *t, int n){
     for(int i=0;i<=n;i++){
@@ -130,6 +143,9 @@ int similar (char *s, char *t, int n){
     }
     return 0;
 }
+/*The function receives the desired string for search, receives the lines of text, and prints the lines in them
+appears
+.the string, using the relevant functions defined above*/
 void print_lines(char * str){
     char line[LINE]={0};
 
@@ -139,6 +155,11 @@ void print_lines(char * str){
         }
     }
 }
+/*The function receives the desired string for search, captures the words of the text and prints the words
+similar to string
+The search up to the omission of one letter from the words appearing in the text (including words identical to the string).
+the search
+The function will use the relevant functions defined above*/
 void print_similar_words(char * str){
     char word[WORD]={0};
 
