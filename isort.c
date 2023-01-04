@@ -34,7 +34,7 @@ int main(){
     for (size_t i = 0; i < LEN-1; i++){
         printf("%d,",*(my_arr+i));
     }
-    printf("%d\n\n",*(my_arr + (LEN-1)));
+    printf("%d\n",*(my_arr + (LEN-1)));
     return 0;
 }
 
